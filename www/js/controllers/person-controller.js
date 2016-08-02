@@ -16,4 +16,6 @@ starterController.controller("PersonController", [function() {
     theMovieDb.people.getById({"id":287}, function(d) {
         //console.log(d);
     }, function(err) {})
+
+    // here
 }]);
