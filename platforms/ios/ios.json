@@ -1,0 +1,39 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"ThemeableBrowser\"><param name=\"ios-package\" value=\"CDVThemeableBrowser\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-themeablebrowser": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-themeablebrowser/www/themeablebrowser.js",
+            "id": "cordova-plugin-themeablebrowser.themeablebrowser",
+            "pluginId": "cordova-plugin-themeablebrowser",
+            "clobbers": [
+                "cordova.ThemeableBrowser"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-themeablebrowser": "0.2.15"
+    }
+}

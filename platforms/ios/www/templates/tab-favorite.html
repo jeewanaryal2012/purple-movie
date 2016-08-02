@@ -1,0 +1,59 @@
+<!--
+<ion-view view-title="Favorite">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="i in [0,1]" type="item-text-wrap"
+                href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{i}}</h2>
+        <p>{{i}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+-->
+
+<ion-view view-title="My Favorite">
+  <ion-content>
+    <ion-list>
+
+      <div class="row">
+        <div class="col" style="text-align: right;">
+          <button class="button button-clear button-positive" ng-click="clearFavorites()">
+            <i class="fa fa-trash-o" aria-hidden="true"></i> Clear Favorites
+          </button>
+        </div>
+      </div>
+      <ion-scroll zooming="false" direction="y" style="height: 500px;">
+        <ion-spinner class="spinner-royal" icon="android" ng-show="popularLoading == true"></ion-spinner>
+        <ion-list>
+          <ion-item class="item-remove-animate item-thumbnail-left item-icon-right item-text-wrap" ng-repeat="m in favorites"
+                    type="item-text-wrap" href="#/tab/favorite/detail/{{m.id}}">
+            <img ng-if="m.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w500/{{m.poster_path}}">
+            <img ng-if="m.poster_path === null" ng-src="img/image-not-available.png">
+            <h2>{{m.title}}</h2>
+            <p>{{m.release_date | date}}</p>
+            <!-- <p><i class="fa fa-star" aria-hidden="true"></i> {{m.vote_average}}/10</p> -->
+                    <span ng-repeat="s in ratingValues">
+                      <i class="fa fa-star" ng-if="s < m.vote_average"></i>
+                      <i class="fa fa-star-o" ng-if="s > m.vote_average"></i>
+                    </span>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+
+            <ion-option-button class="button-assertive" ng-click="removeFavorite(m)">
+              Delete
+            </ion-option-button>
+          </ion-item>
+        </ion-list>
+      </ion-scroll>
+
+
+    </ion-list>
+  </ion-content>
+</ion-view>

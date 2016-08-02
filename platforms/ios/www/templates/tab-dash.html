@@ -1,0 +1,52 @@
+
+<ion-view view-title="Search Results">
+  <ion-nav-buttons side="right">
+    <a class="button icon-left ion-arrow-left-b button-clear pagination-button"
+        ng-click="nextPage('p')" ng-hide="res.page == 1"></a>
+    <a class="button icon-right ion-arrow-right-b button-clear pagination-button"
+        ng-click="nextPage('n')" ng-hide="pageNum == res.total_pages" style="margin: 0 20px;"></a>
+  </ion-nav-buttons>
+  <ion-content class="padding" ng-show="loading">
+    <ion-spinner class="spinner-royal" icon="android"></ion-spinner>
+  </ion-content>
+
+  <ion-content class="padding" ng-hide="loading">
+
+    <!-- <ion-list>
+      <ion-item>
+        <div>
+          <a class="button icon-left ion-chevron-left button-clear button-royal" ng-click="nextPage('p')" ng-hide="res.page == 1">PREV</a>
+          <a class="button icon-right ion-chevron-right button-clear button-royal" ng-click="nextPage('n')" ng-hide="pageNum == res.total_pages">NEXT</a>
+        </div>
+      </ion-item>
+    </ion-list> -->
+
+
+    <ion-list>
+      <ion-item>
+        <div class="row">
+          <div class="col col-75">Total Results: {{res.total_results}}</div>
+          <div class="col">Page {{res.page}} of {{res.total_pages}}</div>
+        </div>
+      </ion-item>
+      <ion-item class="item-remove-animate item-thumbnail-left item-icon-right item-text-wrap" ng-repeat="m in arr"
+                type="item-text-wrap" href="#/tab/dash/detail/{{m.imdbID}}">
+        <img ng-if="m.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w500/{{m.poster_path}}">
+        <img ng-if="m.poster_path === null" ng-src="img/image-not-available.png">
+        <h2 style="font-size: 1.4em; color: indigo;">{{m.title}}</h2>
+        <p>{{m.release_date | date}}</p>
+        <p>Popularity: {{m.popularity}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll
+      ng-if="moreData"
+      on-infinite="loadMore()"
+      distance="1%"
+      spinner="bubbles">
+    </ion-infinite-scroll>
+
+
+
+  </ion-content>
+</ion-view>
