@@ -1,6 +1,86 @@
 <ion-view ng-controller="favorite-controller">
+
+
   <ion-nav-title>{{movieDetail.title}}</ion-nav-title>
   <ion-content class="padding">
-    {{favList.title}}
+
+    <div class="list card detail-segment">
+
+      <div class="item item-avatar">
+        <img ng-if="movieDetail.backdrop_path !== 'N/A'" ng-src="http://image.tmdb.org/t/p/w500/{{movieDetail.backdrop_path}}">
+        <img ng-if="movieDetail.backdrop_path === 'N/A'" ng-src="img/image-not-available.png">
+        <h2>{{movieDetail.title}}</h2>
+        <h4>{{movieDetail.tagline}}</h4>
+        <h4>
+          <span ng-repeat="gen in movieDetail.genres">
+          {{gen.name}}
+        </span>
+        </h4>
+        <p>{{movieDetail.release_date | date}}</p>
+        <span ng-repeat="s in [0,1,2,3,4,5,6,7,8,9]">
+          <i class="fa fa-star" ng-if="s < movieDetail.vote_average"></i>
+          <i class="fa fa-star-o" ng-if="s > movieDetail.vote_average"></i>
+        </span>
+        <div class="detail-buttons">
+          <button class="button button-outline button-positive button-small fav-view-btn" ng-click="watchOnline(movieDetail)">
+            <i class="fa fa-eye" aria-hidden="true"></i> View
+          </button>
+        </div>
+      </div>
+
+      <div class="item item-body">
+        <img ng-src="http://image.tmdb.org/t/p/w500/{{movieDetail.backdrop_path}}">
+        <p>
+          {{movieDetail.overview}}
+        </p>
+        <p>
+          <a href="#" class="subdued"></a>
+          <a href="#" class="subdued"></a>
+        </p>
+      </div>
+
+    </div>
+
+    <style>
+      .button-small {
+
+      }
+      .fav-view-btn {
+        width: 100%;
+      }
+    </style>
+
+
+    <div class="list card" style="display: none;">
+
+      <div class="item item-avatar">
+        <img ng-if="movieDetail.backdrop_path !== 'N/A'" ng-src="http://image.tmdb.org/t/p/w500/{{movieDetail.backdrop_path}}">
+        <img ng-if="movieDetail.backdrop_path === 'N/A'" ng-src="img/image-not-available.png">
+        <h2>{{movieDetail.Title}}</h2>
+        <p>{{movieDetail.Released}}</p>
+        <button class="button button-outline button-positive button-small" ng-click="addToFavorite(movieDetail)">
+          <i class="fa fa-star-o" aria-hidden="true"></i> Add To Favorite
+        </button>
+        <button class="button button-outline button-positive button-small" ng-click="watchOnline(movieDetail.Title)">
+          Watch Online
+        </button>
+      </div>
+
+      <div class="item item-body">
+        <img ng-src="http://image.tmdb.org/t/p/w500/{{movieDetail.backdrop_path}}">
+        <p>
+          {{movieDetail.overview}}
+        </p>
+        <p>
+          <a href="#" class="subdued">{{movieDetail.runtime}} min</a>
+          <a href="#" class="subdued">5 Comments</a>
+        </p>
+      </div>
+
+    </div>
+
   </ion-content>
-  </ion-view>
+
+
+
+</ion-view>

@@ -76,7 +76,7 @@ starterController.controller("favorite-controller", ["$scope", "$stateParams", "
     angular.forEach($localStorage.favoriteList, function(k, v) {
       if(parseInt($stateParams.favoriteId) === parseInt(k.id)) {
         console.log(k.title);
-        $scope.favList = k;
+        $scope.movieDetail = k;
       }
     });
 }]);
