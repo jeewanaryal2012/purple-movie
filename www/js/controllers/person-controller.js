@@ -17,5 +17,4 @@ starterController.controller("PersonController", [function() {
         //console.log(d);
     }, function(err) {})
 
-    // here
 }]);
