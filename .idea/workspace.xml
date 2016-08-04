@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b96e397d-0596-49f6-97fd-9eb1844f67c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova.xcodeproj/project.xcworkspace/xcuserdata/jeewanaryal.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/platforms/ios/HelloCordova.xcodeproj/project.xcworkspace/xcuserdata/jeewanaryal.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/js/controllers/favorite-controller.js" afterPath="$PROJECT_DIR$/platforms/ios/www/js/controllers/favorite-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/favorite-controller.js" afterPath="$PROJECT_DIR$/www/js/controllers/favorite-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/favorite-detail.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/favorite-detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/favorite-detail.html" afterPath="$PROJECT_DIR$/www/templates/favorite-detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/js/controllers/person-controller.js" afterPath="$PROJECT_DIR$/platforms/ios/www/js/controllers/person-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/tabs.html" afterPath="$PROJECT_DIR$/www/templates/tabs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/README.md" afterPath="$PROJECT_DIR$/platforms/ios/www/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/tabs.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/tabs.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="purple-movie.iws" />
@@ -34,8 +31,8 @@
       <file leaf-file-name="tabs.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/templates/tabs.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3846154">
-              <caret line="15" column="83" selection-start-line="15" selection-start-column="83" selection-end-line="15" selection-end-column="83" />
+            <state vertical-scroll-proportion="0.35897437">
+              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -44,7 +41,7 @@
       <file leaf-file-name="tab-search-form.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/tab-search-form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="13.125">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="31" />
               <folding />
             </state>
@@ -54,7 +51,7 @@
       <file leaf-file-name="tab-favorite.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/tab-favorite.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625">
+            <state vertical-scroll-proportion="0.0">
               <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
               <folding>
                 <element signature="n#style#0;n#ion-scroll#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
@@ -106,7 +103,7 @@
       <file leaf-file-name="movie-detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/movie-detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-50.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="80" column="16" selection-start-line="2" selection-start-column="2" selection-end-line="80" selection-end-column="16" />
               <folding />
             </state>
@@ -116,7 +113,7 @@
       <file leaf-file-name="favorite-detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/favorite-detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.375">
+            <state vertical-scroll-proportion="0.0">
               <caret line="24" column="88" selection-start-line="24" selection-start-column="88" selection-end-line="24" selection-end-column="88" />
               <folding />
             </state>
@@ -185,7 +182,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="10" />
+    <option name="x" value="55" />
     <option name="y" value="23" />
     <option name="width" value="1208" />
     <option name="height" value="732" />
@@ -213,8 +210,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -308,6 +303,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -579,7 +576,8 @@
       <workItem from="1469414518692" duration="3335000" />
       <workItem from="1469850279193" duration="972000" />
       <workItem from="1470097516132" duration="1182000" />
-      <workItem from="1470099503654" duration="5133000" />
+      <workItem from="1470099503654" duration="5320000" />
+      <workItem from="1470352361871" duration="86000" />
     </task>
     <task id="LOCAL-00001" summary="minor changes">
       <created>1469414595123</created>
@@ -591,36 +589,36 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11203000" />
+    <option name="totallyTimeSpent" value="11476000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="23" width="1208" height="732" extended-state="0" />
-    <editor active="true" />
+    <frame x="55" y="23" width="1208" height="732" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2102649" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2102649" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -643,6 +641,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/segment-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/tabs.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -663,7 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="85" column="17" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -745,7 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="85" column="17" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -827,7 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="85" column="17" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,7 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="85" column="17" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -980,7 +982,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/tab-search-form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="13.125">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="31" />
           <folding />
         </state>
@@ -996,7 +998,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/tab-favorite.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
+        <state vertical-scroll-proportion="0.0">
           <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
           <folding>
             <element signature="n#style#0;n#ion-scroll#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
@@ -1008,13 +1010,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15410958">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/movie-detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-50.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="80" column="16" selection-start-line="2" selection-start-column="2" selection-end-line="80" selection-end-column="16" />
           <folding />
         </state>
@@ -1030,7 +1031,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/favorite-detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375">
+        <state vertical-scroll-proportion="0.0">
           <caret line="24" column="88" selection-start-line="24" selection-start-column="88" selection-end-line="24" selection-end-column="88" />
           <folding />
         </state>
@@ -1038,8 +1039,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/tabs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3846154">
-          <caret line="15" column="83" selection-start-line="15" selection-start-column="83" selection-end-line="15" selection-end-column="83" />
+        <state vertical-scroll-proportion="0.35897437">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding />
         </state>
       </provider>
