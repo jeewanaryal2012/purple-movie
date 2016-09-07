@@ -1,0 +1,25 @@
+<div ng-if="selectedIndex==3" class="segment">
+    <h4>Now Playing</h4>
+    <ion-scroll zooming="false" direction="y" style="height: 500px;">
+        <ion-list>
+            <ion-item>
+                <div class="row">
+                    <div class="col col-75">Total Results: {{res.total_results}}</div>
+                    <div class="col">Page {{res.page}} of {{res.total_pages}}</div>
+                </div>
+            </ion-item>
+            <ion-item class="item-remove-animate item-thumbnail-left item-icon-right item-text-wrap" ng-repeat="m in [1,2,3,4,5,6,7,8,9, 10, 11,12]"
+                      type="item-text-wrap" href="#/tab/dash/detail/{{m.imdbID}}">
+                <img ng-if="m.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w500/{{m.poster_path}}">
+                <img ng-if="m.poster_path === null" ng-src="img/image-not-available.png">
+                <h2>{{m}}</h2>
+                <p>{{m.release_date | date}}</p>
+              <span ng-repeat="s in [0,1,2,3,4,5,6,7,8,9]">
+                <i class="fa fa-star" ng-if="s < m.vote_average"></i>
+                <i class="fa fa-star-o" ng-if="s > m.vote_average"></i>
+              </span>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
+    </ion-scroll>
+</div>

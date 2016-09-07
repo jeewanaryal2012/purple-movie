@@ -34,112 +34,23 @@
       </div>
 
       <!-- 1. POPULAR -->
-      <div ng-if="selectedIndex==0" class="segment">
-        <div class="row">
-          <div class="col-33">Total: {{popularRes.total_results}}</div>
-          <div class="col-50">Page {{popularRes.page}} of {{popularRes.total_pages}}</div>
-          <div class="col-10 ion-arrow-left-a" ng-click="popularPrev()" style="font-size: 2em; color: #387ef5; margin: 0px 20px 0px -20px;"></div>
-          <div class="col-10 ion-arrow-right-a" ng-click="popularNext()" style="font-size: 2em; color: #387ef5;"></div>
-        </div>
-        <ion-scroll zooming="false" direction="y" style="height: 500px;">
-          <ion-spinner class="spinner-royal" icon="android" ng-show="popularLoading == true"></ion-spinner>
-          <ion-list ng-show="popularLoading == false">
-            <ion-item class="item-remove-animate item-thumbnail-left item-icon-right item-text-wrap" ng-repeat="m in popularRes.results"
-                      type="item-text-wrap" href="#/tab/dash/detail/{{m.id}}">
-              <img ng-if="m.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w500/{{m.poster_path}}">
-              <img ng-if="m.poster_path === null" ng-src="img/image-not-available.png">
-              <h2>{{m.title}}</h2>
-              <p>{{m.release_date | date}}</p>
-              <!-- <p><i class="fa fa-star" aria-hidden="true"></i> {{m.vote_average}}/10</p> -->
-              <span ng-repeat="s in ratingValues">
-                <i class="fa fa-star" ng-if="s < m.vote_average"></i>
-                <i class="fa fa-star-o" ng-if="s > m.vote_average"></i>
-              </span>
-              <i class="icon ion-chevron-right icon-accessory"></i>
-            </ion-item>
-          </ion-list>
-        </ion-scroll>
-      </div>
+      <div ng-include="'templates/lists/popular-list.html'"></div>
       <!-- 1. POPULAR -->
 
       <!-- 2. TOP-RATED -->
-      <div ng-if="selectedIndex==1" class="segment">
-        <div class="row">
-          <div class="col-33">Total: {{topRatedRes.total_results}}</div>
-          <div class="col-50">Page {{topRatedRes.page}} of {{topRatedRes.total_pages}}</div>
-          <div class="col-10 ion-arrow-left-a" ng-click="topRatedPrev()" style="font-size: 2em; color: #387ef5; margin: 0px 20px 0px -20px;"></div>
-          <div class="col-10 ion-arrow-right-a" ng-click="topRatedNext()" style="font-size: 2em; color: #387ef5;"></div>
-        </div>
-        <ion-scroll zooming="false" direction="y" style="height: 500px;">
-          <ion-spinner class="spinner-royal" icon="android" ng-show="topRatedLoading == true"></ion-spinner>
-          <ion-list ng-show="topRatedLoading == false">
-            <ion-item class="item-remove-animate item-thumbnail-left item-icon-right item-text-wrap" ng-repeat="m in topRatedRes.results"
-                      type="item-text-wrap" href="#/tab/dash/detail/{{m.id}}">
-              <img ng-if="m.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w500/{{m.poster_path}}">
-              <img ng-if="m.poster_path === null" ng-src="img/image-not-available.png">
-              <h2>{{m.title}}</h2>
-              <p>{{m.release_date | date}}</p>
-              <span ng-repeat="s in [0,1,2,3,4,5,6,7,8,9]">
-                <i class="fa fa-star" ng-if="s < m.vote_average"></i>
-                <i class="fa fa-star-o" ng-if="s > m.vote_average"></i>
-              </span>
-              <i class="icon ion-chevron-right icon-accessory"></i>
-            </ion-item>
-          </ion-list>
-        </ion-scroll>
-      </div>
+      <div ng-include="'templates/lists/top-rated-list.html'"></div>
       <!-- 2. TOP-RATED -->
 
-      <div ng-if="selectedIndex==2" class="segment">
-        <h4>Up Coming</h4>
-        <ion-scroll zooming="false" direction="y" style="height: 500px;">
-          <ion-list>
-            <ion-item>
-              <div class="row">
-                <div class="col col-75">Total Results: {{res.total_results}}</div>
-                <div class="col">Page {{res.page}} of {{res.total_pages}}</div>
-              </div>
-            </ion-item>
-            <ion-item class="item-remove-animate item-thumbnail-left item-icon-right item-text-wrap" ng-repeat="m in [1,2,3,4,5,6,7,8,9, 10, 11,12]"
-                      type="item-text-wrap" href="#/tab/dash/detail/{{m.imdbID}}">
-              <img ng-if="m.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w500/{{m.poster_path}}">
-              <img ng-if="m.poster_path === null" ng-src="img/image-not-available.png">
-              <h2>{{m}}</h2>
-              <p>{{m.release_date | date}}</p>
-              <span ng-repeat="s in [0,1,2,3,4,5,6,7,8,9]">
-                <i class="fa fa-star" ng-if="s < m.vote_average"></i>
-                <i class="fa fa-star-o" ng-if="s > m.vote_average"></i>
-              </span>
-              <i class="icon ion-chevron-right icon-accessory"></i>
-            </ion-item>
-          </ion-list>
-        </ion-scroll>
-      </div>
-      <div ng-if="selectedIndex==3" class="segment">
-        <h4>Now Playing</h4>
-        <ion-scroll zooming="false" direction="y" style="height: 500px;">
-          <ion-list>
-            <ion-item>
-              <div class="row">
-                <div class="col col-75">Total Results: {{res.total_results}}</div>
-                <div class="col">Page {{res.page}} of {{res.total_pages}}</div>
-              </div>
-            </ion-item>
-            <ion-item class="item-remove-animate item-thumbnail-left item-icon-right item-text-wrap" ng-repeat="m in [1,2,3,4,5,6,7,8,9, 10, 11,12]"
-                      type="item-text-wrap" href="#/tab/dash/detail/{{m.imdbID}}">
-              <img ng-if="m.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w500/{{m.poster_path}}">
-              <img ng-if="m.poster_path === null" ng-src="img/image-not-available.png">
-              <h2>{{m}}</h2>
-              <p>{{m.release_date | date}}</p>
-              <span ng-repeat="s in [0,1,2,3,4,5,6,7,8,9]">
-                <i class="fa fa-star" ng-if="s < m.vote_average"></i>
-                <i class="fa fa-star-o" ng-if="s > m.vote_average"></i>
-              </span>
-              <i class="icon ion-chevron-right icon-accessory"></i>
-            </ion-item>
-          </ion-list>
-        </ion-scroll>
-      </div>
+      <!-- 2. UP-COMING -->
+      <div ng-include="'templates/lists/up-coming-list.html'"></div>
+      <!-- 2. UP-COMING -->
+
+      <!-- 2. NOW-PLAYING -->
+      <div ng-include="'templates/lists/now-playing-list.html'"></div>
+      <!-- 2. NOW-PLAYING -->
+
+
+
 
     </div>
 

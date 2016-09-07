@@ -30,7 +30,7 @@
         </div>
       </ion-item>
       <ion-item class="item-remove-animate item-thumbnail-left item-icon-right item-text-wrap" ng-repeat="m in arr"
-                type="item-text-wrap" href="#/tab/dash/detail/{{m.imdbID}}">
+                type="item-text-wrap" href="#/tab/dash/detail/{{m.id}}">
         <img ng-if="m.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w500/{{m.poster_path}}">
         <img ng-if="m.poster_path === null" ng-src="img/image-not-available.png">
         <h2 style="font-size: 1.4em; color: indigo;">{{m.title}}</h2>
