@@ -89,3 +89,14 @@ div.spinner {
 .body-text {
   color: #666666;
 }
+.up-coming {
+  width: 100% !important;
+}
+
+.showFirstPage {
+  visibility: visible;
+  color: #007aff;
+}
+.hideFirstPage {
+  visibility: hidden;
+}

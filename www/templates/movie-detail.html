@@ -21,10 +21,10 @@
           <i class="fa fa-star-o" ng-if="s > movieDetail.vote_average"></i>
         </span>
         <div class="detail-buttons">
-          <button class="button button-outline button-positive button-small" ng-click="addToFavorite(movieDetail)">
+          <button class="button button-outline button-positive button-small" ng-click="addToFavorite(movieDetail)" ng-class="isUpcoming === true ? 'up-coming' : 'not-up-coming' ">
             <i class="fa fa-heart-o" aria-hidden="true"></i> Add To Favorite
           </button>
-          <button class="button button-outline button-positive button-small" ng-click="watchOnline(movieDetail)">
+          <button class="button button-outline button-positive button-small" ng-click="watchOnline(movieDetail)" ng-hide="isUpcoming === true">
             <i class="fa fa-eye" aria-hidden="true"></i> View
           </button>
         </div>

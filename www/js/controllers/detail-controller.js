@@ -7,8 +7,8 @@ starterController.controller("detail-controller", [
   function($scope, $stateParams, DashboardService, $localStorage, $ionicPopup, $http) {
 
 
-    console.log($stateParams.movieId);
-
+    //console.log($stateParams.movieId);
+    $scope.isUpcoming = true;
 
     theMovieDb.movies.getById(
       {
@@ -19,6 +19,9 @@ starterController.controller("detail-controller", [
         //console.log("D: " + angular.toJson(d));
         $scope.$apply(function () {
           $scope.movieDetail = d;
+          dt = new Date() - new Date(d.release_date);
+          $scope.isUpcoming = (dt<1) ? true : false;
+          console.log(new Date() - new Date(d.release_date));
         });
       },
       function(err) {});
@@ -58,8 +61,9 @@ starterController.controller("detail-controller", [
     }
 
     $scope.watchOnline = function(m) {
+      console.log(m);
       //console.log(m.original_title.replace(/\s+/g, '-').toLowerCase());
-      console.log(m.original_title.replace(/[^a-zA-Z ]/g, "").replace(/\s+/g, '-').toLowerCase());
+      //console.log(m.original_title.replace(/[^a-zA-Z ]/g, "").replace(/\s+/g, '-').toLowerCase());
       var movieToWatch = m.original_title.replace(/[^a-zA-Z ]/g, "").replace(/\s+/g, '-').toLowerCase();
       var pre = "http://putlocker.is/watch-";
       var pos = "-online-free-putlocker.html";
