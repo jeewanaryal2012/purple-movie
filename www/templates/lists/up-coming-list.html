@@ -1,20 +1,22 @@
+
 <div ng-if="selectedIndex==2" class="segment">
-    <h4>Up Coming</h4>
+    <div class="row">
+        <div class="col-33">Total: {{upcomingRes.total_results}}</div>
+        <div class="col-50">Page {{upcomingRes.page}} of {{upcomingRes.total_pages}}</div>
+        <div class="col-10 ion-arrow-left-a" ng-click="upcomingPrev()" style="font-size: 2em; color: #387ef5; margin: 0px 20px 0px -20px;"></div>
+        <div class="col-10 ion-arrow-right-a" ng-click="upcomingNext()" style="font-size: 2em; color: #387ef5;"></div>
+    </div>
     <ion-scroll zooming="false" direction="y" style="height: 500px;">
-        <ion-list>
-            <ion-item>
-                <div class="row">
-                    <div class="col col-75">Total Results: {{res.total_results}}</div>
-                    <div class="col">Page {{res.page}} of {{res.total_pages}}</div>
-                </div>
-            </ion-item>
-            <ion-item class="item-remove-animate item-thumbnail-left item-icon-right item-text-wrap" ng-repeat="m in [1,2,3,4,5,6,7,8,9, 10, 11,12]"
-                      type="item-text-wrap" href="#/tab/dash/detail/{{m.imdbID}}">
+        <ion-spinner class="spinner-royal" icon="android" ng-show="upcomingLoading == true"></ion-spinner>
+        <ion-list ng-show="upcomingLoading == false">
+            <ion-item class="item-remove-animate item-thumbnail-left item-icon-right item-text-wrap" ng-repeat="m in upcomingRes.results"
+                      type="item-text-wrap" href="#/tab/dash/detail/{{m.id}}">
                 <img ng-if="m.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w500/{{m.poster_path}}">
                 <img ng-if="m.poster_path === null" ng-src="img/image-not-available.png">
-                <h2>{{m}}</h2>
+                <h2>{{m.title}}</h2>
                 <p>{{m.release_date | date}}</p>
-              <span ng-repeat="s in [0,1,2,3,4,5,6,7,8,9]">
+                <!-- <p><i class="fa fa-star" aria-hidden="true"></i> {{m.vote_average}}/10</p> -->
+              <span ng-repeat="s in ratingValues">
                 <i class="fa fa-star" ng-if="s < m.vote_average"></i>
                 <i class="fa fa-star-o" ng-if="s > m.vote_average"></i>
               </span>
