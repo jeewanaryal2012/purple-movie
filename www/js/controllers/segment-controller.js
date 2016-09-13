@@ -150,4 +150,68 @@ starterController.controller("segment-controller", [
   };
   /* GET TOP-RATED */
 
+
+
+    /* 3. GET UPCOMING */
+    $scope.upcomingLoading = true;
+    theMovieDb.movies.getUpcoming({},
+        function(d) {
+          d = JSON.parse(d);
+          //console.log("D: " + JSON.parse(d));
+          $scope.$apply(function () {
+            $scope.upcomingRes = d;
+            $scope.upcomingArr = d.results;
+            $scope.upcomingMoreData = false;
+            $scope.upcomingTotalPage = d.total_pages;
+            $scope.upcomingLoading = false;
+          });
+          //console.log("POP: " + angular.toJson(d));
+        },
+        function(err) {
+          console.log("ERR : " + err);
+        });
+
+    $scope.upcomingPrev = function() {
+      $scope.upcomingLoading = true;
+      $scope.upcomingPageNum = $scope.upcomingPageNum > 1 ? $scope.upcomingPageNum : 2;
+      theMovieDb.movies.getUpcoming(
+          {
+            page: $scope.upcomingPageNum-1
+          },
+          function(d) {
+            d = JSON.parse(d);
+            //console.log("D: " + JSON.parse(d));
+            $scope.$apply(function () {
+              $scope.upcomingRes = d;
+              $scope.upcomingArr = d.results;
+              $scope.upcomingMoreData = false;
+              $scope.upcomingPageNum = $scope.upcomingRes.page;
+              $scope.upcomingLoading = false;
+            });
+          },
+          function(err) {});
+    };
+
+    $scope.upcomingNext = function() {
+      $scope.upcomingLoading = true;
+      $scope.upcomingPageNum = $scope.upcomingPageNum > $scope.upcomingTotalPage ? $scope.upcomingTotalPage : $scope.upcomingPageNum;
+      theMovieDb.movies.getUpcoming(
+          {
+            page: $scope.upcomingPageNum+1
+          },
+          function(d) {
+            d = JSON.parse(d);
+            //console.log("D: " + JSON.parse(d));
+            $scope.$apply(function () {
+              $scope.upcomingRes = d;
+              $scope.upcomingArr = d.results;
+              $scope.upcomingMoreData = false;
+              $scope.upcomingPageNum = $scope.upcomingRes.page;
+              $scope.upcomingLoading = false;
+            });
+          },
+          function(err) {});
+    };
+    /* GET UPCOMING */
+
 }]);
