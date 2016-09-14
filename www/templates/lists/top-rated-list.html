@@ -1,7 +1,8 @@
 <div ng-if="selectedIndex==1" class="segment">
     <div class="row">
         <div class="col-33">Total: {{topRatedRes.total_results}}</div>
-        <div class="col-50">Page {{topRatedRes.page}} of {{topRatedRes.total_pages}}</div>
+        <div class="col-25">Page {{topRatedRes.page}} of {{topRatedRes.total_pages}}</div>
+        <div class="col-25" ng-class="fpTopRated ? 'showFirstPage' : 'hideFirstPage' " ng-click="firstPageTopRated()">First Page</div>
         <div class="col-10 ion-arrow-left-a" ng-click="topRatedPrev()" style="font-size: 2em; color: #387ef5; margin: 0px 20px 0px -20px;"></div>
         <div class="col-10 ion-arrow-right-a" ng-click="topRatedNext()" style="font-size: 2em; color: #387ef5;"></div>
     </div>

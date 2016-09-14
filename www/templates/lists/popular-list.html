@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-33">Total: {{popularRes.total_results}}</div>
         <div class="col-25"> {{popularRes.page}} of {{popularRes.total_pages}}</div>
-        <div class="col-25" ng-class="pageFirst ? 'showFirstPage' : 'hideFirstPage' " ng-click="firstPage()">First Page</div>
+        <div class="col-25" ng-class="fpPopular ? 'showFirstPage' : 'hideFirstPage' " ng-click="firstPagePopular()">First Page</div>
         <div class="col-10 ion-arrow-left-a" ng-click="popularPrev()" style="font-size: 2em; color: #387ef5; margin: 0px 20px 0px -20px;"></div>
         <div class="col-10 ion-arrow-right-a" ng-click="popularNext()" style="font-size: 2em; color: #387ef5;"></div>
     </div>

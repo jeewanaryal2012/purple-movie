@@ -5,53 +5,35 @@
 starterController.controller("segment-controller", [
   "$rootScope", "$scope", "DashboardService", "$ionicListDelegate", "$ionicPopup", "$stateParams",
   function($rootScope, $scope, DashboardService, $ionicListDelegate, $ionicPopup, $stateParams) {
-  $scope.pageFirst = false;
-  $scope.loading = true;
-  //render($scope.pageNum);
-  $scope.arr = [];
-  $scope.pageNum = 1;
-  var cnt = 0;
+    $scope.fpPopular = false;
+    $scope.fpTopRated = false;
+    $scope.fpUpcoming = false;
+    $scope.fpNowPlaying = false;
 
-  $scope.popularArr = [];
-  $scope.topRatedArr = [];
-  $scope.upcomingArr = [];
-  $scope.nowPlayingArr = [];
-  $scope.popularPageNum = 1;
-  $scope.topRatedPageNum = 1
-  $scope.upcomingPageNum = 1
-  $scope.nowPlayingPageNum = 1
+    $scope.loading = true;
+    //render($scope.pageNum);
+    $scope.arr = [];
+    $scope.pageNum = 1;
+    var cnt = 0;
 
-  $scope.selectedIndex = 0;
-  $scope.buttonClicked = function(index){
-    $scope.selectedIndex = index;
-    $scope.$apply();
-  }
+    $scope.popularArr = [];
+    $scope.topRatedArr = [];
+    $scope.upcomingArr = [];
+    $scope.nowPlayingArr = [];
+    $scope.popularPageNum = 1;
+    $scope.topRatedPageNum = 1
+    $scope.upcomingPageNum = 1
+    $scope.nowPlayingPageNum = 1
 
-  /* 1. GET POPULAR */
-  $scope.popularLoading = true;
-  theMovieDb.movies.getPopular({},
-    function(d) {
-      d = JSON.parse(d);
-      //console.log("D: " + JSON.parse(d));
-      $scope.$apply(function () {
-        $scope.popularRes = d;
-        $scope.popularArr = d.results;
-        $scope.popularMoreData = false;
-        $scope.popularLoading = false;
-        $scope.popularTotalPage = d.total_pages;
-      });
-    },
-    function(err) {
-      console.log("ERR : " + err);
-    });
+    $scope.selectedIndex = 0;
+    $scope.buttonClicked = function(index){
+      $scope.selectedIndex = index;
+      $scope.$apply();
+    }
 
-  $scope.popularPrev = function() {
+    /* 1. GET POPULAR */
     $scope.popularLoading = true;
-    $scope.popularPageNum = $scope.popularPageNum > 1 ? $scope.popularPageNum : 2;
-    theMovieDb.movies.getPopular(
-      {
-        page: $scope.popularPageNum-1
-      },
+    theMovieDb.movies.getPopular({},
       function(d) {
         d = JSON.parse(d);
         //console.log("D: " + JSON.parse(d));
@@ -59,16 +41,38 @@ starterController.controller("segment-controller", [
           $scope.popularRes = d;
           $scope.popularArr = d.results;
           $scope.popularMoreData = false;
-          $scope.popularPageNum = $scope.popularRes.page;
           $scope.popularLoading = false;
+          $scope.popularTotalPage = d.total_pages;
         });
       },
-      function(err) {});
-    if($scope.popularPageNum-1 <= 1) {
-      $scope.pageFirst = false;
-    } else {
-      $scope.pageFirst = true;
-    }
+      function(err) {
+        console.log("ERR : " + err);
+      });
+
+    $scope.popularPrev = function() {
+      $scope.popularLoading = true;
+      $scope.popularPageNum = $scope.popularPageNum > 1 ? $scope.popularPageNum : 2;
+      theMovieDb.movies.getPopular(
+        {
+          page: $scope.popularPageNum-1
+        },
+        function(d) {
+          d = JSON.parse(d);
+          //console.log("D: " + JSON.parse(d));
+          $scope.$apply(function () {
+            $scope.popularRes = d;
+            $scope.popularArr = d.results;
+            $scope.popularMoreData = false;
+            $scope.popularPageNum = $scope.popularRes.page;
+            $scope.popularLoading = false;
+          });
+        },
+        function(err) {});
+      if($scope.popularPageNum-1 <= 1) {
+        $scope.fpPopular = false;
+      } else {
+        $scope.fpPopular = true;
+      }
   };
 
   $scope.popularNext = function() {
@@ -92,13 +96,13 @@ starterController.controller("segment-controller", [
       function(err) {});
 
     if($scope.popularPageNum+1 > 1) {
-      $scope.pageFirst = true;
+      $scope.fpPopular = true;
     } else {
-      $scope.pageFirst = false;
+      $scope.fpPopular = false;
     }
   };
 
-  $scope.firstPage = function() {
+  $scope.firstPagePopular = function() {
     $scope.popularLoading = true;
     theMovieDb.movies.getPopular(
         {
@@ -117,7 +121,7 @@ starterController.controller("segment-controller", [
         },
         function(err) {});
 
-    $scope.pageFirst = false;
+    $scope.fpPopular = false;
   };
   /* GET POPULAR */
 
@@ -140,47 +144,80 @@ starterController.controller("segment-controller", [
       console.log("ERR : " + err);
     });
 
-  $scope.topRatedPrev = function() {
-    $scope.topRatedLoading = true;
-    $scope.topRatedPageNum = $scope.topRatedPageNum > 1 ? $scope.topRatedPageNum : 2;
-    theMovieDb.movies.getTopRated(
-      {
-        page: $scope.topRatedPageNum-1
-      },
-      function(d) {
-        d = JSON.parse(d);
-        //console.log("D: " + JSON.parse(d));
-        $scope.$apply(function () {
-          $scope.topRatedRes = d;
-          $scope.topRatedArr = d.results;
-          $scope.topRatedMoreData = false;
-          $scope.topRatedPageNum = $scope.topRatedRes.page;
-          $scope.topRatedLoading = false;
-        });
-      },
-      function(err) {});
-  };
+    $scope.topRatedPrev = function() {
+      $scope.topRatedLoading = true;
+      $scope.topRatedPageNum = $scope.topRatedPageNum > 1 ? $scope.topRatedPageNum : 2;
+      theMovieDb.movies.getTopRated(
+        {
+          page: $scope.topRatedPageNum-1
+        },
+        function(d) {
+          d = JSON.parse(d);
+          //console.log("D: " + JSON.parse(d));
+          $scope.$apply(function () {
+            $scope.topRatedRes = d;
+            $scope.topRatedArr = d.results;
+            $scope.topRatedMoreData = false;
+            $scope.topRatedPageNum = $scope.topRatedRes.page;
+            $scope.topRatedLoading = false;
+          });
+        },
+        function(err) {});
+      if($scope.topRatedPageNum-1 <= 1) {
+        $scope.fpTopRated = false;
+      } else {
+        $scope.fpTopRated = true;
+      }
+    };
 
-  $scope.topRatedNext = function() {
-    $scope.topRatedLoading = true;
-    $scope.topRatedPageNum = $scope.topRatedPageNum > $scope.topRatedTotalPage ? $scope.topRatedTotalPage : $scope.topRatedPageNum;
-    theMovieDb.movies.getTopRated(
-      {
-        page: $scope.topRatedPageNum+1
-      },
-      function(d) {
-        d = JSON.parse(d);
-        //console.log("D: " + JSON.parse(d));
-        $scope.$apply(function () {
-          $scope.topRatedRes = d;
-          $scope.topRatedArr = d.results;
-          $scope.topRatedMoreData = false;
-          $scope.topRatedPageNum = $scope.topRatedRes.page;
-          $scope.topRatedLoading = false;
-        });
-      },
-      function(err) {});
-  };
+    $scope.topRatedNext = function() {
+      $scope.topRatedLoading = true;
+      $scope.topRatedPageNum = $scope.topRatedPageNum > $scope.topRatedTotalPage ? $scope.topRatedTotalPage : $scope.topRatedPageNum;
+      theMovieDb.movies.getTopRated(
+        {
+          page: $scope.topRatedPageNum+1
+        },
+        function(d) {
+          d = JSON.parse(d);
+          //console.log("D: " + JSON.parse(d));
+          $scope.$apply(function () {
+            $scope.topRatedRes = d;
+            $scope.topRatedArr = d.results;
+            $scope.topRatedMoreData = false;
+            $scope.topRatedPageNum = $scope.topRatedRes.page;
+            $scope.topRatedLoading = false;
+          });
+        },
+        function(err) {});
+      if($scope.topRatedPageNum+1 > 1) {
+        $scope.fpTopRated = true;
+      } else {
+        $scope.fpTopRated = false;
+      }
+    };
+
+    $scope.firstPageTopRated = function() {
+      $scope.topRatedLoading = true;
+      theMovieDb.movies.getTopRated(
+          {
+            page: 1
+          },
+          function(d) {
+            d = JSON.parse(d);
+            //console.log("D: " + JSON.parse(d));
+            $scope.$apply(function () {
+              $scope.topRatedRes = d;
+              $scope.topRatedArr = d.results;
+              $scope.topRatedMoreData = false;
+              $scope.topRatedPageNum = $scope.topRatedRes.page;
+              $scope.topRatedLoading = false;
+            });
+          },
+          function(err) {});
+
+      $scope.fpTopRated = false;
+    };
+
   /* GET TOP-RATED */
 
 
@@ -223,6 +260,11 @@ starterController.controller("segment-controller", [
             });
           },
           function(err) {});
+      if($scope.upcomingPageNum-1 <= 1) {
+        $scope.fpUpcoming = false;
+      } else {
+        $scope.fpUpcoming = true;
+      }
     };
 
     $scope.upcomingNext = function() {
@@ -244,6 +286,33 @@ starterController.controller("segment-controller", [
             });
           },
           function(err) {});
+      if($scope.upcomingPageNum+1 > 1) {
+        $scope.fpUpcoming = true;
+      } else {
+        $scope.fpUpcoming = false;
+      }
+    };
+
+    $scope.firstPageUpcoming = function() {
+      $scope.upcomingLoading = true;
+      theMovieDb.movies.getUpcoming(
+          {
+            page: 1
+          },
+          function(d) {
+            d = JSON.parse(d);
+            //console.log("D: " + JSON.parse(d));
+            $scope.$apply(function () {
+              $scope.upcomingRes = d;
+              $scope.upcomingArr = d.results;
+              $scope.upcomingMoreData = false;
+              $scope.upcomingPageNum = $scope.upcomingRes.page;
+              $scope.upcomingLoading = false;
+            });
+          },
+          function(err) {});
+
+      $scope.fpUpcoming = false;
     };
     /* GET UPCOMING */
 
@@ -287,6 +356,11 @@ starterController.controller("segment-controller", [
             });
           },
           function(err) {});
+      if($scope.nowPlayingPageNum-1 <= 1) {
+        $scope.fpNowPlaying = false;
+      } else {
+        $scope.fpNowPlaying = true;
+      }
     };
 
     $scope.nowPlayingNext = function() {
@@ -308,7 +382,35 @@ starterController.controller("segment-controller", [
             });
           },
           function(err) {});
+      if($scope.nowPlayingPageNum+1 > 1) {
+        $scope.fpNowPlaying = true;
+      } else {
+        $scope.fpNowPlaying = false;
+      }
     };
+
+    $scope.firstPageNowPlaying = function() {
+      $scope.nowPlayingLoading = true;
+      theMovieDb.movies.getNowPlaying(
+          {
+            page: 1
+          },
+          function(d) {
+            d = JSON.parse(d);
+            //console.log("D: " + JSON.parse(d));
+            $scope.$apply(function () {
+              $scope.nowPlayingRes = d;
+              $scope.nowPlayingArr = d.results;
+              $scope.nowPlayingMoreData = false;
+              $scope.nowPlayingPageNum = $scope.nowPlayingRes.page;
+              $scope.nowPlayingLoading = false;
+            });
+          },
+          function(err) {});
+
+      $scope.fpNowPlaying = false;
+    };
+
     /* NOW PLAYING */
 
 }]);
