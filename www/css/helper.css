@@ -99,3 +99,7 @@ div.spinner {
 .hideFirstPage {
   visibility: hidden;
 }
+
+.segment .row div:nth-child(4), .segment .row div:nth-child(5) {
+  margin-top: -4px !important;
+}

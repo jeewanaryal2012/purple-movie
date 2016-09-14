@@ -79,6 +79,24 @@ angular.module('starter', ['ionic', "ngStorage", 'starter.controllers', 'starter
     }
   })
 
+  .state('tab.search', {
+    url: '/search',
+    views: {
+      'tab-search': {
+        templateUrl: 'templates/search.html',
+        controller: 'SearchController'
+      }
+    }
+  })
+  .state('tab.search-detail', {
+    url: '/search/detail/:searchId',
+    views: {
+      'tab-search': {
+        templateUrl: 'templates/search-details.html',
+        controller: 'SearchController'
+      }
+    }
+  })
 
   .state('tab.person', {
     url: '/person',
